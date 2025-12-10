@@ -7,14 +7,12 @@ interface SectionTitleProps {
   title: string;
   keyword: string;
   subtitle?: string;
-  vector?: boolean;
   rowPosition?: boolean;
 }
 
 export const SectionTitle: React.FC<SectionTitleProps> = ({
   title,
   subtitle,
-  vector = false,
   rowPosition = false,
   keyword,
 }) => {
@@ -29,15 +27,6 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
           : "justify-center flex-col"
       )}
     >
-      {vector && (
-        <Image
-          src="/Icons/waves.svg"
-          alt="background waves"
-          fill
-          priority
-          className="object-cover opacity-60 pointer-events-none -z-10 w-auto h-auto"
-        />
-      )}
 
       <div ref={fadeUp}>
         <div
@@ -46,16 +35,16 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
             rowPosition ? "items-start" : "items-center"
           )}
         >
-          <Image
-            src="/Icons/sparkles.svg"
+          {/* <Image
+            src="/icons/sparkles.svg"
             alt="abstract design"
             width={56}
             height={56}
             className="mb-4 w-auto h-auto"
-          />
+          /> */}
           <h2 className="text-2xl md:text-4xl font-semibold text-brand ">
             {parts[0]}
-            <span className="alice-regular">{keyword}</span>
+            <span className="font-aboreto text-2xl">--- {keyword}</span>
             {parts[1]}
           </h2>
         </div>

@@ -1,0 +1,48 @@
+import Image from "next/image";
+import Corner from "../ui/corner";
+
+export default function CtaSection() {
+  return (
+    <section className="relative w-full bg-black text-white py-20 px-6">
+      {/* COINS  */}
+      <div className="pointer-events-none absolute inset-0">
+        <Corner className="absolute top-0 left-0 -rotate-90" />
+        <Corner className="absolute top-0 right-0 -rotate-360" />
+        <Corner className="absolute bottom-0 left-0 rotate-180" />
+        <Corner className="absolute bottom-0 right-0 rotate-90" />
+      </div>
+
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 relative">
+        <div className="flex-1 text-center md:text-left">
+          <h2 className="text-5xl font-aboreto mb-4">VISION</h2>
+          <p className="text-gray-300 leading-relaxed max-w-sm mx-auto md:mx-0">
+            My work captures emotion, authenticity, and the unspoken. I focus on
+            powerful compositions where light, texture, and expression become
+            the language of the image.
+          </p>
+        </div>
+
+        <div className="shrink-0 w-[380px] h-[380px] relative bg-brand p-4 border border-white/50">
+          {" "}
+          <div className="absolute inset-0 bg-brand rounded-full " />{" "}
+          <Image
+            src="/images/face.png"
+            height={500}
+            width={500}
+            alt="Portrait"
+            className="w-full h-full object-cover rounded-full relative z-10"
+          />{" "}
+        </div>
+
+        <div className="flex-1 text-center md:text-right">
+          <h2 className="text-5xl font-aboreto mb-4">STYLE</h2>
+          <p className="text-gray-300 leading-relaxed max-w-sm ml-auto">
+            My photography blends modern aesthetics with raw storytelling. Each
+            portrait reflects character, mood, and depth—designed to engage,
+            intrigue, and stay memorable.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { ArrowDown } from "lucide-react";
 import * as React from "react";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -18,17 +18,17 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
-    const baseClasses = "transition text-sm md:text-base rounded-full";
+    const baseClasses = "transition text-sm md:text-base";
 
     const variants = {
       default:
-        "bg-brand-gradient text-white px-6 py-3 hover:scale-105 duration-200",
+        "bg-brand text-white px-6 py-3 hover:scale-105 duration-200",
       outline:
-        "bg-transparent border border-white text-white px-6 py-3 hover:scale-105 duration-200",
+        "bg-transparent border border-black text-black px-6 py-3 hover:scale-105 duration-200",
       linkArrow:
-        "capitalize text-center pb-1 flex items-center gap-2 group bg-transparent px-0 py-0",
+        "capitalize px-6 py-3 bg-transparent  text-center pb-1 flex items-center gap-2 group bg-transparent ",
       clean:
-        "bg-transparent border-none text-white px-6 py-3 hover:scale-105 duration-200",
+        "bg-transparent border-none text-black px-6 py-3 hover:scale-105 duration-200",
     };
 
     return (
@@ -41,12 +41,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {children}
         {variant === "linkArrow" && (
-          <Image
-            src="/Icons/arrow-right.svg"
-            alt="arrow"
-            height={20}
-            width={20}
-            className="w-auto h-auto group-hover:translate-x-2 transform duration-200"
+          <ArrowDown
+            size={20}
+            className=" animate-bounce"
           />
         )}
       </button>

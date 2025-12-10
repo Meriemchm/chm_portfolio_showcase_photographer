@@ -14,4 +14,9 @@ export const NavbarData = [
     name: "services",
     link: "/services",
   },
+  {
+    id: 4,
+    name: "contact",
+    link: "/contact",
+  },
 ];

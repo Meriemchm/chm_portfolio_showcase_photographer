@@ -1,4 +1,4 @@
-import React from "react";
+
 import {
   FieldError,
   UseFormRegister,
@@ -43,7 +43,7 @@ const InputField = <T extends FieldValues>({
         <textarea
           {...register(name)}
           placeholder={placeholder}
-          className="w-full border border-grey-90 rounded-lg p-3 resize-none"
+          className="w-full border border-grey-90  p-3 resize-none"
           rows={5}
         />
       ) : (
@@ -55,7 +55,7 @@ const InputField = <T extends FieldValues>({
           min={min}
           max={max}
           step={step}
-          className="w-full border border-grey-90 rounded-lg p-3"
+          className="w-full border-b border-grey-90  p-3"
         />
       )}
 

@@ -2,7 +2,6 @@ import { SocialMediaData } from "@/data/SocialMediaData";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 
 interface SocialMediaIconsProps {
   className?: string;
@@ -11,29 +10,26 @@ interface SocialMediaIconsProps {
 
 const SocialMediaIcons: React.FC<SocialMediaIconsProps> = ({
   className = "",
-  size = 16,
+  size = 24, 
 }) => {
   return (
     <div className="flex gap-2">
-      {SocialMediaData.map((item, index) => (
-        <div
-          key={index}
-          className={cn(
-            className,
-            "rounded-full p-2 hover:scale-105 duration-200 "
-          )}
-        >
-          <Link href={item.link} target="_blank" rel="noopener noreferrer">
-            <Image
-              src={item.icon}
-              alt={item.name}
-              height={size}
-              width={size}
-              className="w-auto h-auto"
-            />
-          </Link>{" "}
-        </div>
-      ))}
+      {SocialMediaData.map((item) => {
+        const Icon = item.icon; 
+        return (
+          <div
+            key={item.id}
+            className={cn(
+              className,
+              "rounded-full p-2 hover:scale-105 duration-200"
+            )}
+          >
+            <Link href={item.link} target="_blank" rel="noopener noreferrer">
+              <Icon size={size} /> 
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 };

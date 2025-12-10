@@ -3,13 +3,11 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { ContactFormData, contactSchema } from "@/schemas/contactSchema";
 import InputField from "@/components/ui/InputField";
 import Button from "@/components/ui/button";
 import toast from "react-hot-toast";
 import { useGsapFade } from "@/hooks/useGsapFade";
-import SelectField from "../ui/select-field";
-import { PreferredServiceData } from "@/data/PreferredServiceData";
+import { ContactFormData, contactSchema } from "@/schemas/contactSchema";
 
 const ContactForm = () => {
   const fadeleft = useGsapFade("left");
@@ -50,19 +48,11 @@ const ContactForm = () => {
       {" "}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6">
         <InputField
-          name="firstName"
+          name="fullName"
           register={register}
-          placeholder="First Name"
-          error={errors.firstName}
+          placeholder="Full Name"
+          error={errors.fullName}
         />
-        <InputField
-          name="lastName"
-          register={register}
-          placeholder="Last Name"
-          error={errors.lastName}
-        />
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <InputField
           name="email"
           type="email"
@@ -70,22 +60,7 @@ const ContactForm = () => {
           placeholder="Email"
           error={errors.email}
         />
-
-        <InputField
-          name="phone"
-          type="tel"
-          register={register}
-          placeholder="Phone"
-          error={errors.phone}
-        />
       </div>
-      <SelectField
-        label="Preferred Service"
-        name="preferredService"
-        options={PreferredServiceData}
-        register={register}
-        error={errors.preferredService}
-      />
       <InputField
         name="subject"
         register={register}
