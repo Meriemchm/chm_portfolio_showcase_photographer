@@ -1,0 +1,17 @@
+export const NavbarData = [
+  {
+    id: 1,
+    name: "home",
+    link: "/",
+  },
+  {
+    id: 2,
+    name: "about",
+    link: "/about",
+  },
+  {
+    id: 3,
+    name: "services",
+    link: "/services",
+  },
+];
