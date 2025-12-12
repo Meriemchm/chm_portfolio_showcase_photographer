@@ -1,7 +1,6 @@
 import Image from "next/image";
 import RevealTrigger from "../ui/reveal-trigger";
 import SocialMediaIcons from "../ui/socialMediaIcons";
-import { FooterSecondRow } from "../footer/footer-second-row";
 import { ContactItems } from "../ui/contact-items";
 import { ContactFooterData } from "@/data/ContactFooterData";
 import Link from "next/link";
