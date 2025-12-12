@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div
       className={clsx(
-        "absolute w-full z-50  text-white"
+        "absolute w-full z-40  text-white"
       )}
     >
       {/* Navbar container */}

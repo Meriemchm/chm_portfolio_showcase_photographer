@@ -4,6 +4,8 @@ import SocialMediaIcons from "../ui/socialMediaIcons";
 import { FooterSecondRow } from "../footer/footer-second-row";
 import { ContactItems } from "../ui/contact-items";
 import { ContactFooterData } from "@/data/ContactFooterData";
+import Link from "next/link";
+import Button from "../ui/button";
 
 export default function RevealSection() {
   return (
@@ -56,6 +58,14 @@ export default function RevealSection() {
               />
             </div>
           </div>
+        </div>
+        <div className="absolute bottom-20 flex gap-4 z-30">
+          <Link href="/about">
+            <Button variant="clean">About</Button>
+          </Link>
+          <Link href="/contact">
+            <Button variant="outline">Contact</Button>
+          </Link>
         </div>
       </section>
     </RevealTrigger>
