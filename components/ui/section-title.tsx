@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { useGsapFade } from "@/hooks/useGsapFade";
 
 interface SectionTitleProps {
@@ -17,18 +16,18 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
   keyword,
 }) => {
   const parts = title.split(keyword);
-  const fadeUp = useGsapFade("up");
+  const { setRef, setContainer } = useGsapFade("up");
   return (
     <div
+      ref={setContainer}
       className={cn(
-        "relative w-full py-16 flex items-center text-center gap-2 overflow-hidden",
+        "relative w-full pt-16 md:py-16 flex items-center text-center gap-2 overflow-hidden",
         rowPosition
           ? "justify-between md:items-center items-start md:flex-row flex-col px-1"
           : "justify-center flex-col"
       )}
     >
-
-      <div ref={fadeUp}>
+      <div ref={setRef}>
         <div
           className={cn(
             "flex flex-col   gap-2",

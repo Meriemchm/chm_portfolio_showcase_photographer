@@ -12,25 +12,27 @@ export default function RevealSection({ children }: RevealTriggerProps) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
+    const lenis = (window as any).lenis;
+    if (!lenis) return;
+
     if (open) {
+
+      lenis.stop && lenis.stop(); 
       document.body.style.overflow = "hidden";
     } else {
+      lenis.start && lenis.start(); 
       document.body.style.overflow = "";
     }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [open]);
 
   return (
     <div
-      className={`absolute top-0 left-0 w-full h-screen overflow-hidden ${
+      className={`fixed top-0 left-0 w-full h-screen  ${
         open ? "z-50" : "z-30"
       }`}
     >
       {!open && (
-        <div className="absolute -top-18 left-0 w-full h-full flex items-center justify-end px-10">
+        <div className="absolute -top-32 md:-top-18 left-0 w-full h-full flex items-center justify-end px-10">
           <div
             className="flex flex-col items-end space-y-2 cursor-pointer"
             onClick={() => setOpen(true)}
@@ -65,7 +67,7 @@ export default function RevealSection({ children }: RevealTriggerProps) {
         animate={{ scaleX: open ? 1 : 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
         style={{ transformOrigin: "left" }}
-        className="absolute top-0 left-0 h-full w-full bg-white text-black overflow-auto"
+        className="absolute top-0 left-0 h-full w-full bg-white text-black overflow-hidden"
       >
         <div className="p-10 relative h-full">{children}</div>
       </motion.div>

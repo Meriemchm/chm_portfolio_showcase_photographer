@@ -10,7 +10,7 @@ import { useGsapFade } from "@/hooks/useGsapFade";
 import { ContactFormData, contactSchema } from "@/schemas/contactSchema";
 
 const ContactForm = () => {
-  const fadeUp = useGsapFade("up");
+  const { setRef } = useGsapFade("up");
 
   const [isSending, setIsSending] = useState(false);
 
@@ -42,8 +42,8 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className=" bg-white rounded-2xl space-y-6"
-      ref={fadeUp}
+      className=" space-y-6"
+      ref={setRef}
     >
       {" "}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6">

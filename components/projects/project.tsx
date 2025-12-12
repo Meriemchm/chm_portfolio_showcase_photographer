@@ -1,49 +1,8 @@
 "use client";
+import { useGsapFade } from "@/hooks/useGsapFade";
 import Image from "next/image";
 import Masonry from "react-masonry-css";
-
-const images = [
-  {
-    src: "/images/Image-1.png",
-    title: "2024 Autumn/Fall",
-    desc: "Creative Direction — Photography",
-  },
-  {
-    src: "/images/Image-2.png",
-    title: "Urban Shadows",
-    desc: "Street Photography",
-  },
-  {
-    src: "/images/Image-3.png",
-    title: "Night Portrait",
-    desc: "Cinematic — Low Light",
-  },
-  {
-    src: "/images/Image-4.png",
-    title: "Golden Hour",
-    desc: "Outdoor Session",
-  },
-  {
-    src: "/images/Image-5.png",
-    title: "Fashion Week 2024",
-    desc: "Editorial Shot",
-  },
-  {
-    src: "/images/Image-6.png",
-    title: "Monochrome Study",
-    desc: "Black & White — Fine Art",
-  },
-  {
-    src: "/images/Image-7.png",
-    title: "Nature Flow",
-    desc: "Landscape Photography",
-  },
-  {
-    src: "/images/Image-8.png",
-    title: "Street Flow",
-    desc: "Urban Story",
-  },
-];
+import {ProjectsData} from "@/data/ProjectsData"
 
 // BREAKPOINTS
 const breakpointColumns = {
@@ -53,15 +12,17 @@ const breakpointColumns = {
 };
 
 export const Project = () => {
+  const { setRef, setContainer } = useGsapFade("up");
   return (
-    <div className="w-full mt-12">
+    <div ref={setContainer}  className="w-full mt-12">
       <Masonry
         breakpointCols={breakpointColumns}
         className="flex gap-6"
         columnClassName="masonry-column"
+        
       >
-        {images.map((image, index) => (
-          <div key={index} className="relative mb-6 group overflow-hidden">
+        {ProjectsData.map((image, index) => (
+          <div key={index} ref={(el) => setRef(el,index)} className="relative mb-6 group overflow-hidden">
             {/* IMAGE */}
             <Image
               src={image.src}

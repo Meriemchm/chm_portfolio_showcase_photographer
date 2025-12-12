@@ -5,7 +5,7 @@ import React from "react";
 
 const ContactPage = () => {
   return (
-    <div>
+  <div className="overflow-hidden">
       <RevealSection />
       <Banner />
       <Contact />

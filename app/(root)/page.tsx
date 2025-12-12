@@ -7,7 +7,7 @@ import RevealSection from "@/components/reveal-section/reveal-section";
 
 export default function RootSetup() {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <RevealSection />
       <Hero />
       <About />

@@ -1,32 +1,48 @@
+'use client'
+import { useGsapFade } from "@/hooks/useGsapFade";
+import Image from "next/image";
+
 export default function CtaFooter() {
+  const { setRef: setRefLeft } = useGsapFade("left");
+  const { setRef: setRefRight } = useGsapFade("right");
   return (
-    <section className="w-full bg-[#611618] text-white py-20 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 items-center">
-
-        <div className="flex flex-col text-4xl font-bold leading-none tracking-wide">
-          <span>RO</span>
-          <span>MAN</span>
-          <span>TIC</span>
-          <span>SOUL</span>
-        </div>
-
-        <div className="w-full h-full flex justify-center">
-          <img
-            src="/images/cta-footer.png"
+    <section className="w-full bg-white text-white py-16 md:py-24 px-4 sm:px-6">
+      <div className="relative max-w-6xl mx-auto">
+        {/* Image container */}
+        <div className="relative w-full h-full flex justify-center">
+          <Image
+            src="/images/cta_footer.png"
             alt="Portrait"
-            className="object-cover w-full h-full max-h-96 grayscale"
+            height={500}
+            width={500}
+            className="object-cover w-full h-full max-h-64 sm:max-h-96"
           />
-        </div>
 
-        <div className="space-y-8 text-xs leading-relaxed max-w-xs">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum
-            lectus, mattis quis dapibus vitae, varius id purus. Maecenas lorem.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dictum
-            lectus, mattis quis dapibus vitae, varius id purus.
-          </p>
+          {/* TOP RIGHT — ROMANTIC SOUL */}
+          <div
+            ref={setRefLeft}
+            className="absolute top-2 sm:top-4 right-2 sm:right-4 text-2xl  font-bold leading-none tracking-wide  text-right"
+          >
+            <span className="block">RO</span>
+            <span className="block">MAN</span>
+            <span className="block">TIC</span>
+            <span className="block">SOUL</span>
+          </div>
+
+          {/* BOTTOM LEFT — PARAGRAPHES */}
+          <div
+            ref={setRefRight}
+            className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4 space-y-2 sm:space-y-4 text-xs leading-relaxed max-w-[180px] sm:max-w-xs"
+          >
+            <p>
+              Every portrait hides a story a silent emotion, a fleeting moment,
+              a soul revealed through light and shadow.
+            </p>
+            <p className="hidden md:block">
+              Each image is a journey into authenticity, capturing the beauty
+              woven between intention and spontaneity.
+            </p>
+          </div>
         </div>
       </div>
     </section>

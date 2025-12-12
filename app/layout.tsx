@@ -5,6 +5,8 @@ import { Toaster } from "react-hot-toast";
 import Navbar from "@/components/navbar/navbar";
 import { Footer } from "@/components/footer/footer";
 import localFont from "next/font/local";
+import ScrollToTopButton from "@/components/ui/scroll-to-to-bottom";
+import LenisProvider from "@/components/ui/lenis-provider";
 
 //Google Fonts
 const aboreto = Aboreto({
@@ -43,9 +45,11 @@ export default function RootLayout({
       <body
         className={` ${groovy.variable} ${aboreto.variable} ${alice.variable} antialiased`}
       >
+        <ScrollToTopButton />
+
         <Toaster position="top-right" />
         <Navbar />
-        {children}
+        <LenisProvider>{children}</LenisProvider>
         <Footer />
       </body>
     </html>

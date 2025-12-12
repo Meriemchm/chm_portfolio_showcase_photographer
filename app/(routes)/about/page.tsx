@@ -6,7 +6,7 @@ import RevealSection from "@/components/reveal-section/reveal-section";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <RevealSection />
       <Banner />
       <About />
