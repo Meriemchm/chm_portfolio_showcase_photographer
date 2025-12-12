@@ -27,7 +27,7 @@ export default function RevealSection({ children }: RevealTriggerProps) {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full h-screen  ${
+      className={`absolute top-0 left-0 w-full h-screen  ${
         open ? "z-50" : "z-30"
       }`}
     >
@@ -56,7 +56,7 @@ export default function RevealSection({ children }: RevealTriggerProps) {
         <X
           size={30}
           strokeWidth={1}
-          className="absolute top-5 right-5 cursor-pointer z-999"
+          className="fixed top-5 right-5 cursor-pointer z-999"
           onClick={() => setOpen(false)}
         />
       )}
@@ -67,7 +67,7 @@ export default function RevealSection({ children }: RevealTriggerProps) {
         animate={{ scaleX: open ? 1 : 0 }}
         transition={{ duration: 0.8, ease: "easeInOut" }}
         style={{ transformOrigin: "left" }}
-        className="absolute top-0 left-0 h-full w-full bg-white text-black overflow-hidden"
+        className="fixed top-0 left-0 h-full w-full bg-white text-black overflow-hidden"
       >
         <div className="p-10 relative h-full">{children}</div>
       </motion.div>

@@ -6,6 +6,7 @@ import Link from "next/link";
 import Button from "../ui/button";
 import { motion, useMotionValue } from "framer-motion";
 import Lenis from "lenis";
+import { useGsapFade } from "@/hooks/useGsapFade";
 
 declare global {
   interface Window {
@@ -19,6 +20,7 @@ const Hero = () => {
   const scaleFront = useMotionValue(1);
   const opacityText = useMotionValue(1);
   const blurText = useMotionValue("0px");
+  const { setRef: setRefRight } = useGsapFade("right");
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -27,7 +29,7 @@ const Hero = () => {
       lerp: 0.1,
     });
 
-    (window as any).lenis = lenis; // expose globalement si tu veux
+    (window as any).lenis = lenis;
 
     function raf(time: number) {
       lenis.raf(time);
@@ -53,9 +55,12 @@ const Hero = () => {
   }, [yFront, yBack, scaleFront, opacityText, blurText]);
 
   return (
-    <section className="relative min-h-screen bg-brand flex justify-center items-center overflow-hidden">
+    <section
+      className="relative min-h-screen bg-brand flex justify-center items-center overflow-hidden"
+    >
       {/* Top left text */}
       <motion.p
+        ref={setRefRight}
         style={{ opacity: opacityText, filter: blurText }}
         className="absolute top-36 left-6 max-w-xs text-white text-xs font-aboreto italic z-30"
       >
@@ -71,7 +76,10 @@ const Hero = () => {
       </motion.p>
 
       {/* Image frontale */}
-      <motion.div className="absolute z-20 bottom-0 w-120 h-120 md:w-auto md:h-auto" style={{ y: yFront, scale: scaleFront }}>
+      <motion.div
+        className="absolute z-20 bottom-0 w-120 h-120 md:w-auto md:h-auto"
+        style={{ y: yFront, scale: scaleFront }}
+      >
         <Image
           src="/images/hero-2.webp"
           alt="hero-image"
@@ -82,7 +90,10 @@ const Hero = () => {
       </motion.div>
 
       {/* Image arrière */}
-      <motion.div className="absolute z-10 bottom-0 opacity-80 w-120 h-120 md:w-auto md:h-auto" style={{ y: yBack }}>
+      <motion.div
+        className="absolute z-10 bottom-0 opacity-80 w-120 h-120 md:w-auto md:h-auto"
+        style={{ y: yBack }}
+      >
         <Image
           src="/icons/circle.svg"
           alt="hero-background"
@@ -97,7 +108,7 @@ const Hero = () => {
         style={{ opacity: opacityText, filter: blurText }}
         className="absolute bottom-10 md:bottom-20 flex gap-4 z-30"
       >
-        <Link href="/about" >
+        <Link href="/about">
           <Button variant="clean">About</Button>
         </Link>
         <Link href="/contact">
