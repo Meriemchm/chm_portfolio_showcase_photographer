@@ -39,7 +39,7 @@ export default function RevealSection() {
             {/* Name */}
             <div className="flex flex-col items-center text-brand mx-auto">
               <h3 className="text-2xl font-semibold tracking-widest">
-                GY ANNA
+                Follow ANNA
               </h3>
 
               {/* Social icons */}

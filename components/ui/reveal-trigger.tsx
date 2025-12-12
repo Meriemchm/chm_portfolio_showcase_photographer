@@ -30,7 +30,7 @@ export default function RevealSection({ children }: RevealTriggerProps) {
       }`}
     >
       {!open && (
-        <div className="absolute top-0 left-0 w-full h-full flex items-center justify-end px-10">
+        <div className="absolute -top-18 left-0 w-full h-full flex items-center justify-end px-10">
           <div
             className="flex flex-col items-end space-y-2 cursor-pointer"
             onClick={() => setOpen(true)}

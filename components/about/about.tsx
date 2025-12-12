@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className=" relative min-h-screen w-full py-36 flex flex-col items-center">
       {/* Citation en haut à droite */}
-      <div className="absolute w-82 h-34 bg-brand flex flex-col justify-end items-start px-12 py-4">
+      <div className="absolute z-40 w-82 h-34 bg-brand flex flex-col justify-end items-start px-12 py-4">
         <p className="text-white italic max-w-xs text-right">
           "Photography is the story I fail to put into words." – Destin Sparks
         </p>
@@ -25,9 +25,10 @@ const About = () => {
             </h1>
 
             <p className="mt-4 text-sm max-w-md">
-              I am a passionate photographer, always exploring new perspectives
-              and capturing moments that tell a story. Creativity and attention
-              to detail are at the heart of my work.
+              My name is Anna Dilan , I am a passionate photographer, always
+              exploring new perspectives and capturing moments that tell a
+              story. Creativity and attention to detail are at the heart of my
+              work.
             </p>
           </div>
 
