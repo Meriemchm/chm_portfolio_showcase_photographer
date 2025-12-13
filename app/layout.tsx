@@ -26,7 +26,7 @@ const alice = Alice({
 });
 
 const groovy = localFont({
-  src: "/fonts/groovy.ttf",
+  src: "../public/fonts/groovy.ttf",
   variable: "--font-groovy",
 });
 
