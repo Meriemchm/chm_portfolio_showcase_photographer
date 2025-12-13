@@ -21,7 +21,7 @@ export default function CtaFooter() {
           {/* TOP RIGHT — ROMANTIC SOUL */}
           <div
             ref={setRefLeft}
-            className="absolute top-2 sm:top-4 right-2 sm:right-4 text-2xl  font-bold leading-none tracking-wide  text-right"
+            className="absolute top-2 sm:top-4 right-2 sm:right-4 text-2xl md:text-7xl  font-bold leading-none tracking-wide  text-right"
           >
             <span className="block">RO</span>
             <span className="block">MAN</span>
