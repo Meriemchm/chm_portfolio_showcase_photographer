@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 
 export default function CtaSection() {
   const { setRef: setRefLeft } = useGsapFade("left");
-  const { setRef: setRefRight } = useGsapFade("right");
+  const { setRef: setRefRight , setContainer} = useGsapFade("right");
 
   return (
-    <section className="relative w-full bg-black text-white py-16 md:py-20 px-4 md:px-6">
+    <section ref={setContainer} className="relative w-full bg-black text-white py-16 md:py-20 px-4 md:px-6">
       {/* COINS */}
       <div className="pointer-events-none absolute inset-0">
         <Corner className="absolute top-0 left-0 -rotate-90" />
