@@ -26,8 +26,10 @@ const alice = Alice({
 });
 
 const groovy = localFont({
-  src: "../public/fonts/groovy.ttf",
+  src: "../fonts/groovy.ttf",
   variable: "--font-groovy",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
